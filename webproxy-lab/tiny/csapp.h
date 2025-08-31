@@ -2,6 +2,7 @@
  * csapp.h - prototypes and definitions for the CS:APP3e book
  */
 /* $begin csapp.h */
+#define _POSIX_C_SOURCE 200112L   // POSIX.1-2001 (getaddrinfo 포함)
 #ifndef __CSAPP_H__
 #define __CSAPP_H__
 
@@ -59,6 +60,8 @@ extern char **environ; /* Defined by libc */
 #define	MAXLINE	 8192  /* Max text line length */
 #define MAXBUF   8192  /* Max I/O buffer size */
 #define LISTENQ  1024  /* Second argument to listen() */
+
+# define SA_RESTART   0x10000000 /* Restart syscall on signal return.  */
 
 /* Our own error-handling functions */
 void unix_error(char *msg);

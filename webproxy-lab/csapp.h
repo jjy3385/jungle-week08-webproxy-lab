@@ -2,6 +2,7 @@
  * csapp.h - prototypes and definitions for the CS:APP3e book
  */
 /* $begin csapp.h */
+#define _POSIX_C_SOURCE 200112L   // POSIX.1-2001 (getaddrinfo 포함)
 #ifndef __CSAPP_H__
 #define __CSAPP_H__
 
@@ -28,6 +29,7 @@
 #include <netdb.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+
 
 /* Default file permissions are DEF_MODE & ~DEF_UMASK */
 /* $begin createmasks */
