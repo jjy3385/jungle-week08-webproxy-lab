@@ -22,6 +22,7 @@ int main(void) {
 
   /* Make the response body */
   int n = 0;
+  n += snprintf(content + n, MAXBUF - n, "<html><head><title>adder</title></head><body>\r\n");
   n += snprintf(content + n, MAXBUF - n, "<h1>Welcome to add.com:</h1>\r\n");
   n += snprintf(content + n, MAXBUF - n, "<p>THE Internet addition portal.</p>\r\n");
   n += snprintf(content + n, MAXBUF - n, "<p>The answer is: %d + %d = %d</p>\r\n", n1, n2, n1 + n2);
@@ -29,7 +30,7 @@ int main(void) {
   n += snprintf(content + n, MAXBUF - n, "arg1:<input type=""text"" id=""arg1"" value=""%d"" /><br>\r\n", n1);
   n += snprintf(content + n, MAXBUF - n, "arg2:<input type=""text"" id=""arg2"" value=""%d"" /><br>\r\n", n2);
   n += snprintf(content + n, MAXBUF - n, "total:<input type=""text"" id=""total"" value=""%d"" /><br>\r\n", n1 + n2);
-  n += snprintf(content + n, MAXBUF - n, "Thanks for visiting!\r\n");
+  n += snprintf(content + n, MAXBUF - n, "<p>Thanks for visiting!</p></body></html>\r\n");
   
   /* Generate the HTTP response */
   printf("Connection: close\r\n");
