@@ -8,8 +8,8 @@ LIB = -lpthread
 
 all: tiny cgi
 
-tiny: tiny.c csapp.o
-	$(CC) $(CFLAGS) -o tiny tiny.c csapp.o $(LIB)
+tiny: tiny.c echo.c csapp.o
+	$(CC) $(CFLAGS) -o tiny tiny.c echo.c csapp.o $(LIB)
 
 csapp.o: csapp.c
 	$(CC) $(CFLAGS) -c csapp.c
